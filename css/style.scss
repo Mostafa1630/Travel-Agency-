@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+$blue:#29d9d5;
+$black:#111;
+$white:#fff;
+$light-color:#aaa;
+$bg-color:#222;
+$black-bg:rgba(17,17,17,.7);
+$border:.2rem solid $blue;
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap:1.5rem;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+
+  &::-webkit-scrollbar{
+    width:1rem;
+  }
+
+  &::-webkit-scrollbar-track{
+    background: $black;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background: $blue;
+    border-radius: 5rem;
+  }
+}
+
+body{
+  background: $black;
+  overflow-x: hidden;
+}
+
+section{
+  padding:3rem 9%;
+}
+.btn{
+  display: inline-block;
+  font-size: 1.7rem;
+  color: $blue;
+  background: none;
+  border: $border;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    color: $bg-color;
+    background: $blue;
+  }
+}
+.title{
+  text-align: center;
+  span{
+    font-size: 2.1rem;
+    color: $blue;
+  }
+  h2{
+    font-size: 3.8rem;
+    font-weight: bolder;
+    color: $white;
+    margin: 0.5rem;
+  }
+}
+
+
+// Start Header Css
+header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:$bg-color;
+  padding: 1.5rem 9%;
+  .menu{
+    color: $white;
+    font-size: 2.5rem;
+    display: none;
+    cursor: pointer;
+  }
+  .logo{
+    font-size: 2.3rem;
+    color: $white;
+    font-weight: 600;
+    i{
+      color:$blue;
+      margin-right: 0.5rem;
+    }
+  }
+  .navbar{
+    transition: 0.2s;
+    a{
+      font-size: 1.7rem;
+      color: $light-color;
+      margin: 0 0.7rem;
+      &:hover{
+        color: $blue;
+      }
+    }
+    
+  }
+}
+// End Header Css
+// Start Home Section Css
+.home{
+  margin: 0 auto;
+  margin-top: 9rem;
+  width: 90%;
+  border-radius: 1rem;
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url("../images/home-bg.jpg") no-repeat;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5rem;
+  .content{
+    text-align: center;
+    span{
+      font-weight: bolder;
+      color: transparent;
+      -webkit-text-stroke: 0.1rem #fff;
+      font-size: 4vw;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    h3{
+      font-size: 6vw;
+      color:$white;
+  }
+
+  p{
+      max-width: 60rem;
+      margin:1rem auto;
+      font-size: 1.4rem;
+      color:$light-color;
+      line-height: 2;
+  }
+  }
+}
+// End Home Section Css
+// Start Form Book Section CSS
+.form-book{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -5rem;
+  background-color: $bg-color;
+  margin-bottom: 5rem;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  form{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    .input_filed{
+      display: flex;
+      flex-direction: column;
+      width: 23%;
+      label{
+        font-size: 1.4rem;
+        color: $light-color;
+      }
+      input{
+        background: none;
+        border: $border;
+        border-radius: 7rem;
+        color: $light-color;
+        text-transform: none;
+        padding: 1.2rem;
+        margin-top: 1rem;
+      }
+    }
+    .btn{
+      margin-top: 2.5rem;
+    }
+  }
+}
+// End Form Book Section CSS
+
+// Start Section About CSS
+.about{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+  .video-container{
+    flex: 1 1 42rem;
+    .video{
+      width: 100%;
+      border-radius: 2rem;
+    }
+    .controls{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      span{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $white;
+        cursor: pointer;
+        &:hover{
+          background-color: $blue;
+        }
+      }
+    }
+  }
+  .content{
+    flex: 1 1 42rem;
+    span{
+      color: $blue;
+      font-size: 2.2rem;
+    }
+    h3{
+      font-size: 3.8rem;
+      font-weight: bolder;
+      color: $white;
+      margin: 0.7rem 0rem;
+    }
+    p{
+      color: $light-color;
+      font-size: 1.5rem;
+      line-height: 2;
+      margin-bottom: 1rem;
+    }
+  }
+}
+// End Section About CSS
+// Start Section Destination CSS
+.destination{
+  .box-container{
+    @include grid(27rem);
+    margin-top: 1rem;
+    .box{
+      background-color: $bg-color;
+      border-radius: 1rem;
+      overflow: hidden;
+      .image{
+        width: 100%;
+        overflow: hidden;
+        height: 20rem;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          &:hover{
+            transform: scale(1.2);
+          }
+        }
+      }
+      .content{
+        padding: 2rem;
+        text-align: center;
+        h2{
+          font-size: 2rem;
+          color: $white;
+          font-weight: bolder;
+        }
+        p{
+          margin: 1rem 0rem;
+          font-size: 1.5rem;
+          color: $light-color;
+          line-height: 1.8;
+        }
+        a{
+          font-size: 1.7rem;
+          color: $blue;
+          font-weight: bolder;
+          &:hover{
+            i{
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// End Section Destination CSS
+
+// Start Section Services CSS
+.services{
+  .boxs-container{
+    @include grid(32rem);
+    margin-top: 1rem;
+    .box{
+      padding: 4rem;
+      text-align: center;
+      background-color: $bg-color;
+      border-radius: 1rem;
+      overflow: hidden;
+      &:hover{
+        outline: $border;
+      }
+      i{
+        font-size: 5rem;
+        color: $blue;
+        font-weight: bolder;
+      }
+      h2{
+        font-size: 2rem;
+        font-weight: bolder;
+        color: $white;
+        margin: 1.5rem 0rem;
+      }
+      p{
+        color: $light-color;
+        font-size: 1.5rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+// End Section Services CSS
+// Start Section Gallery  Css
+.gallery{
+  .images-contanier{
+    columns: 3 25rem;
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+      .box{
+        overflow: hidden;
+        img{
+          width: 100%;
+          margin-bottom: 1rem;
+          border-radius: 1rem;
+        }
+        p{
+          font-size: 1.5rem;
+          color: $light-color;
+          font-weight: bolder;
+        }
+        h4{
+          font-size: 2rem;
+          color: $white;
+          margin: 0.7rem 0rem;
+        }
+      }
+  }
+}
+// End Section Gallery  Css
+// Start Section Testimonials  CSS
+.testimonials{
+  .boxs-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .box-testimonals{
+      flex: 1 1 42rem;
+      margin: auto 0;
+      span{
+        font-size: 2.2rem;
+        color: $blue;
+      }
+      h3{
+        font-size: 3rem;
+        color: $white;
+        font-weight: bolder;
+        margin: 0.7rem 0rem;
+      }
+      p{
+        font-size: 1.5rem;
+        line-height: 1.8;
+        color: $light-color;
+      }
+    }
+    .boxs-testimonal{
+      flex: 1 1 42rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+        .box{
+          flex: 1 1 20rem;
+          background: $bg-color;
+          border-radius: 1rem;
+          padding: 2rem;
+          overflow: hidden;
+          &:hover{
+            outline: $border;
+          }
+          p{
+            color: $light-color;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
+          .test{
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            .image{
+              width: 7rem;
+              img{
+                width: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+            }
+            .content{
+              h4{
+                font-size: 2rem;
+                color: $white;
+                font-weight: bolder;
+                margin-bottom: 0.1rem;
+              }
+              span{
+                font-size: 1.5rem;
+                color: $light-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+// End Section Testimonials  CSS
+// Start Section Blogs CSS
+.blogs{
+  .boxs-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1.5rem;
+    .box{
+      flex: 1 1 32rem;
+      background-color: $bg-color;
+      border-radius: 1rem;
+      overflow: hidden;
+      .image{
+        width: 100%;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 25rem;
+          &:hover{
+            transform: scale(1.2);
+          }
+        }
+      }
+      .content-text{
+        padding: 2rem;
+        h3{
+          font-size: 2rem;
+          color: $white;
+          font-weight: bolder;
+        }
+        p{
+          font-size: 1.4rem;
+          color: $light-color;
+          line-height: 1.8;
+          margin: 0.8rem 0rem;
+        }
+        .icons{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem;
+          a{
+            font-size: 1.5rem;
+            color: $light-color;
+            &:hover{
+              color: $blue;
+            }
+            i{
+              color: $blue;
+              margin-right: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// End Section Blogs CSS
+// Start Section Adventures CSS
+.Adventures{
+  height: 35rem;
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url("../images/banner-bg.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container{
+    text-align: center;
+    width: 40%;
+    span{
+      font-size: 2rem;
+      color: $blue;
+    }
+    h2{
+      font-size: 3.5rem;
+      font-weight: bolder;
+      margin: 1rem 0;
+      color: $white;
+    }
+    p{
+      font-size: 1.5rem;
+      color: $light-color;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+// End Section Adventures CSS
+// Start Section Footer CSS
+.footer{
+  .box-container{
+    @include grid(27rem);
+    .box{
+      h3{
+        font-size: 2.2rem;
+        color: $white;
+        font-weight: bolder;
+        margin-bottom: 2rem;
+        i{
+          color: $blue;
+          margin-right: 0.5rem;
+        }
+      }
+      &:first-child{
+        p{
+          font-size: 1.3rem;
+          line-height: 2;
+          color: $light-color;
+        }
+        .links{
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin: 2rem 0rem;
+          a{
+            width: 4rem;
+            height: 4rem;
+            line-height: 4rem;
+            text-align: center;
+            border-radius: 50%;
+            border: $border;
+            background-color: none;
+            color: $blue;
+            font-size: 1.8rem;
+            &:hover{
+              background-color: $blue;
+              color: $bg-color;
+            }
+          }
+        }
+      }
+      &:nth-child(2){
+        a{
+          display: block;
+          margin: 1.5rem 0rem;
+          font-size: 1.5rem;
+          color: $light-color;
+          i{
+            color: $blue;
+            margin-right: 0.5rem;
+          }
+          &:hover{
+            i{
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+      &:nth-child(3){
+        p{
+          display: block;
+          margin: 1.5rem 0rem;
+          font-size: 1.5rem;
+          color: $light-color;
+          i{
+            color: $blue;
+            margin-right: 0.5rem;
+          }
+          &:hover{
+            i{
+              margin-right: 2rem;
+            }
+          }
+        }
+      }
+      &:last-child{
+        p{
+          font-size: 1.5rem;
+          color: $light-color;
+          line-height: 2;
+          margin: 1.5rem 0;
+        }
+        form{
+          .email{
+            padding: 1rem;
+            background:none;
+            text-transform: none;
+            border: $border;
+            border-radius: 2rem;
+            margin: 2rem 0rem;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+// End Section Footer CSS
+// Start Footer CSS
+.most{
+  background-color: $bg-color;
+  padding: 2rem;
+  text-align: center;
+  h2{
+    font-size: 2rem;
+    color: $light-color;
+    font-weight: bolder;
+    span{
+      color: $blue;
+    }
+  }
+}
+// End Footer CSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// media queries 
+
+@media (max-width:991px){
+
+  html{
+    font-size: 55%;
+  }
+
+  .header{
+    padding:1.5rem 2rem;
+  }
+
+  section{
+    padding:3rem 2rem;
+  }
+
+  .Adventures{
+    .container{
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width:768px){
+  header{
+    .menu{
+      display: block;
+    }
+    .navbar{
+      display: flex;
+      flex-direction: column;
+      position: absolute ;
+      top: 90%;
+      left: 0;
+      right: 0;
+      background: $bg-color;
+      a{
+        width: 100%;
+        padding: 1rem 1.5rem;
+      }
+      &.active{
+        display: none;
+      }
+    }
+  }
+  .form-book{
+    form{
+      .input_filed{
+        width: 100%;
+      }
+    }
+  }
+  .Adventures{
+    .container{
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width:450px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .Adventures{
+    .container{
+      width: 90%;
+    }
+  }
+
+}
